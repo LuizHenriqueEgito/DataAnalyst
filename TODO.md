@@ -1,0 +1,5 @@
+- [ ] Organize o que você deseja fazer
+- [ ] Coloque maneiras de manipular dados com SQL, Pandas e Polars
+- [ ] Construa visualizações com matplotlib, seaborn, plotly, altair, e ggplot
+- [ ] Foque no livro storytelling com dados
+- [ ] Crie visualizações no Excel
