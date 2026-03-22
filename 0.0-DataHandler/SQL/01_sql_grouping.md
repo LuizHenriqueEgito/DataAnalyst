@@ -21,5 +21,6 @@ SELECT COUNT(coluna_a) from tb_main  -- conta ignorando nulos na coluna passada
 ## HAVING
 O `HAVING` filtra grupos de resultados **após** aplicar o `GROUP BY`. É um `WHERE` para grupos.
 ![alt text](images/image_14.png)
+
 Utilizando `WHERE` para filtrar antes do agrupamento `GROUP BY`
 ![alt text](images/image_15.png)
