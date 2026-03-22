@@ -1,4 +1,4 @@
-# Olhando o dataset
+# Dataset
 ![alt text](images/image_0.png)
 
 ## Filters
@@ -13,14 +13,22 @@
 ## BETWEEN
 ![alt text](images/image_4.png)
 
-## NLARGEST NSMALLEST
+## NLARGEST & NSMALLEST
 ![alt text](images/image_5.png)
 
-## NA'S
+## NA's
 ![alt text](images/image_6.png)
 ![alt text](images/image_7.png)
 
-## LINHAS DUPLICADAS
+## Linhas Duplicadas
 ![alt text](images/image_8.png)
 ![alt text](images/image_9.png)
 ![alt text](images/image_10.png)
+
+## DISTINCT
+O `DISTINCT` remove linhas duplicadas do resultado de uma consulta, retornando apenas valores únicos.
+![alt text](images/image_11.png)
+
+## CASE WHEN
+O `CASE WHEN` faz uma clausula *if* *else* na sua coluna. Ele também pode fazer interações entre as colunas.
+![alt text](images/image_12.png)
