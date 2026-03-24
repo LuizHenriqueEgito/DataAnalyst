@@ -1,3 +1,4 @@
+TODO: Ajuste remova as imagens deixe apenas o código SQL
 # GROUP BY
 A clausula `GROUP BY` faz a agregação de linhas iguais e resume elas. A maneira como ele funciona é a seguinte:
 1. Agrupa as linhas por uma (ou varias) coluna(s) através dos seus valores;

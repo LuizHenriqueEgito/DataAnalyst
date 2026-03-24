@@ -73,9 +73,44 @@ ORDER BY mes
 ```
 
 # Comparação de valores com LAG() - Análise YoY
+Comparar valores entre linhas consecutivas, como crescimento ou queda. Por exemplo: comparar as vendas de um mês com o mês anterior (ou próximo).
+```SQL
+WITH vendas_mensais AS (
+    SELECT
+        DATE_FORMAT(data_venda, '%Y-%m') AS mes
+        ,SUM(qtd_vendida) AS total_vendido_mes
+    FROM vendas
+    GROUP BY DATE_FORMAT(data_venda, '%Y-%m')
+    ORDER BY mes
+)
 
+SELECT
+    mes
+    ,total_vendido_mes
+    ,LAG(total_vendido_mes, 1, NULL) OVER(ORDER BY mes) AS vendas_mes_anterior
+    ,total_vendido_mes - LAG(total_vendido_mes) OVER(ORDER BY mes) AS diferenca
+FROM vendas_mensais
+ORDER BY mes
+```
 # Somas acumuladas com SUM()
+Faz o `cumsum` de uma coluna.
+```SQL
+WITH vendas_mensais AS (
+    SELECT
+        DATE_FORMAT(data_venda, '%Y-%m') AS mes
+        ,SUM(qtd_vendida) AS total_vendido_mes
+    FROM vendas
+    GROUP BY DATE_FORMAT(data_venda, '%Y-%m')
+    ORDER BY mes
+)
 
+SELECT
+    mes
+    ,total_vendido_mes
+    ,SUM(total_vendido_mes) OVER (ORDER BY mes) AS acumulado
+FROM vendas_mensais
+ORDER BY mes
+```
 # Percentuais acumulados para análise de Pareto
 
 # Categorização de valores com NTILE()

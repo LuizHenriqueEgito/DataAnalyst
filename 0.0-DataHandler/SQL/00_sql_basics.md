@@ -1,3 +1,4 @@
+TODO: Ajuste remova as imagens deixe apenas o código SQL
 # Dataset
 ![alt text](images/image_0.png)
 
@@ -32,3 +33,9 @@ O `DISTINCT` remove linhas duplicadas do resultado de uma consulta, retornando a
 ## CASE WHEN
 O `CASE WHEN` faz uma clausula *if* *else* na sua coluna. Ele também pode fazer interações entre as colunas.
 ![alt text](images/image_12.png)
+
+## COALESCE
+Retorna o primeiro valor não nulo de uma lista de argumentos, é útil para lidar com valores `NULL`.
+```SQL
+COALESCE(valor1, valor2, valor3, ..., valorN)
+```
