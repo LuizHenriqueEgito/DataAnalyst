@@ -5,7 +5,7 @@ Cria `rankings` de registros ordenados, por exemplo ordenar clientes com base na
 SELECT * FROM clientes
 ORDER BY renda_anual
 ```
-- `RANK`: Mesmo valor = mesmo rank, pula números no próximo
+- `RANK`: Mesmo valor $=$ mesmo rank, pula números no próximo
 - `DENSE_RANK`: Mesmo valor = mesmo rank, NÃO pula números
 ## RANK()
 `RANK` empata valores, os valores não são unicos e ao passar o valor ele pula, por exemplo se existir duas pessoas em terceiro lugar a proxima será a quinta.
