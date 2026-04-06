@@ -1,0 +1,25 @@
+# Roteiro 
+- [ ] Tabelas
+- [ ] Formatações
+- [ ] Funções
+    - SUM, AVERAGE, COUNT
+    - MIN, MAX
+    - IF, IFS
+    - TRIM, PROPER
+    - XLOOKUP: Pesquisa
+    - INDEX, MATCH
+    - SUMIFS, COUNTIFS
+    - SORT
+    - FILTER
+    - UNIQUE
+- [ ] Limpeza e Tratamento
+    - 
+- [ ] Pivot Tables (Tabelas Dinâmicas)
+    - Segmentação de Dados
+    - Formatação condicional
+    - Agrupamentos
+    - Campos Calculados
+- Visualizações
+
+- Como atualizar automaticamente uma tabela dinâmica
+- Como fazer um relatório profissional
