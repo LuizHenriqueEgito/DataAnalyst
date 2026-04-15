@@ -39,3 +39,18 @@ Retorna o primeiro valor não nulo de uma lista de argumentos, é útil para lid
 ```SQL
 COALESCE(valor1, valor2, valor3, ..., valorN)
 ```
+
+## Ordem de Precedencia de uma Query
+1. FROM
+2. JOIN
+3. WHERE
+4. GROUP BY
+5. HAVING
+6. SELECT
+7. DISTINCT
+8. ORDER BY
+9. LIMIT
+
+```txt
+FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
+```

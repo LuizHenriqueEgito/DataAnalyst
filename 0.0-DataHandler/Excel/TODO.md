@@ -6,7 +6,7 @@
     - MIN, MAX
     - IF, IFS
     - TRIM, PROPER
-    - XLOOKUP: Pesquisa
+    - XLOOKUP (PROCX): Pesquisa
     - INDEX, MATCH
     - SUMIFS, COUNTIFS
     - SORT
