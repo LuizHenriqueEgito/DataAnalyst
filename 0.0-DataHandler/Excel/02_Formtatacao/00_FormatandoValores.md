@@ -3,7 +3,7 @@
 - `ctrl + 1`: Selecione os numeros e rode este comando para formatar os valores. Vá em *Personalizdo*
 
 ## Formatando
-![alt text](images/image_0.png)
+![alt text](../images/image_0.png)
 O campo `Tipo` segue a estrutura:
 > positivo; negativo; zero; texto
 Suponha que sua celula tenha o valor *42*:
