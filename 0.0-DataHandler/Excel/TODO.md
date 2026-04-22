@@ -13,7 +13,12 @@
     - FILTER
     - UNIQUE
 - [ ] Limpeza e Tratamento
-    - 
+    - TRIM
+    - CLEAN
+    - SUBSTITUE
+    - REPLACE
+    - UNIQUE
+    - IF, IFERROR, ISBLANK
 - [ ] Pivot Tables (Tabelas Dinâmicas)
     - Segmentação de Dados
     - Formatação condicional
@@ -22,4 +27,4 @@
 - Visualizações
 
 - Como atualizar automaticamente uma tabela dinâmica
-- Como fazer um relatório profissional
+- Relatório profissional
