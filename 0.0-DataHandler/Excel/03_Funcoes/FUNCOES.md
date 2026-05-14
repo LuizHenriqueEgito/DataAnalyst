@@ -1,0 +1,8 @@
+- MAXIMO(celula; k)  # k = 1 maior valor, k = 2 segundo maior valor, etc
+- MINIMO(celula; k)  # k = 1 menor valor, k = 2 segundo menor valor, etc
+- SE(condição; Valor se Verdadeiro; Valor se Falso)
+- SES(condição; Valor se Verdadeiro; condição; Valor se Verdadeiro; VERDADEIRO; Valor Padrão)
+- SOMA(vetor)
+- MÉDIA(vetor)
+- CONT.VALORES(vetor)
+- FILTRAR

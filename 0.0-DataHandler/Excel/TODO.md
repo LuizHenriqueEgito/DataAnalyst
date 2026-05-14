@@ -2,23 +2,16 @@
 - [ ] Tabelas
 - [ ] Formatações
 - [ ] Funções
-    - SUM, AVERAGE, COUNT
-    - MIN, MAX
-    - IF, IFS
-    - TRIM, PROPER
+    - SUM (SOMA), AVERAGE (MÉDIA), COUNT (CONTAGEM)
+    - MIN (MENOR), MAX (MAIOR)
+    - IF (SE), IFS (SES)
     - XLOOKUP (PROCX): Pesquisa
-    - INDEX, MATCH
     - SUMIFS, COUNTIFS
     - SORT
-    - FILTER
     - UNIQUE
 - [ ] Limpeza e Tratamento
-    - TRIM
-    - CLEAN
-    - SUBSTITUE
-    - REPLACE
-    - UNIQUE
-    - IF, IFERROR, ISBLANK
+    - TRIM (ARRUMAR)
+    - FILTER (FILTRAR)
 - [ ] Pivot Tables (Tabelas Dinâmicas)
     - Segmentação de Dados
     - Formatação condicional
