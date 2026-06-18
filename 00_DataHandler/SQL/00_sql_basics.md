@@ -54,3 +54,4 @@ COALESCE(valor1, valor2, valor3, ..., valorN)
 ```txt
 FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
 ```
+![alt text](images/image_ordem_precedencia.png)
