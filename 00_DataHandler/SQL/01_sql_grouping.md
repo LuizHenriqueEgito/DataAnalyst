@@ -7,7 +7,15 @@ A clausula `GROUP BY` faz a agregação de linhas iguais e resume elas. A maneir
 
 IMPORTANTE: O que está no `SELECT` precisa estar ou no agrupamento `GROUP BY` ou em alguma função de agregação.
 
-![alt text](images/image_13.png)
+```SQL
+SELECT
+    geography
+    ,card_type
+    ,AVG(estimated_salary) AS mean_estimated_salary
+    ,AVG(credit_score) AS mean_credit_score
+FROM customer
+GROUP BY geography, card_type
+```
 ## Funções de agregação
 - `COUNT`: Conta linhas
 ```sql
@@ -19,9 +27,36 @@ SELECT COUNT(coluna_a) from tb_main  -- conta ignorando nulos na coluna passada
 - `MIN / MAX`: Pega o minimo ou o máximo de uma coluna;
 - `COUNT(DISTINCT coluna_a)`: Faz a contagem de valores únicos em uma coluna.
 
+## Contando Duplicados
+```SQL
+SELECT
+    COUNT(DISTINCT id_customer) AS total_ids_unicos
+    ,COUNT(id_customer) AS total_ids
+FROM customers
+WHERE dt_ref = DATE'2000-02-02'
+```
+
 ## HAVING
 O `HAVING` filtra grupos de resultados **após** aplicar o `GROUP BY`. É um `WHERE` para grupos.
-![alt text](images/image_14.png)
-
+```SQL
+SELECT
+    geography
+    ,card_type
+    ,AVG(estimated_salary) AS mean_estimated_salary
+    ,AVG(credit_score) AS mean_credit_score
+FROM customer
+GROUP BY geography, card_type
+HAVING AVG(estimated_salary) < 100000
+```
 Utilizando `WHERE` para filtrar antes do agrupamento `GROUP BY`
-![alt text](images/image_15.png)
+```SQL
+SELECT
+    geography
+    ,card_type
+    ,AVG(estimated_salary) AS mean_estimated_salary
+    ,AVG(credit_score) AS mean_credit_score
+FROM customer
+WHERE is_active_member == 1
+GROUP BY geography, card_type
+HAVING AVG(estimated_salary) < 100000
+```
