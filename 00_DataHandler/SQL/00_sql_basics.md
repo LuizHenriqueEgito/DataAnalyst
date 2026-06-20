@@ -139,6 +139,61 @@ WHERE NOT EXISTS (
 )
 ```
 
+## LIKE & ILIKE
+Buscam padrões dentro de `strings`, `%` é o caracter curinga e `_` obriga a existencia de caracter.
+```SQL
+-- Nomes que começam com "Ana"
+SELECT * FROM clientes WHERE nome LIKE 'Ana%'
+
+-- Nomes que terminam com "Silva"
+SELECT * FROM clientes WHERE nome LIKE '%Silva'
+
+-- Nomes que contêm "ar" em qualquer posição
+SELECT * FROM clientes WHERE nome LIKE '%ar%'
+
+-- Nomes com exatamente 5 letras
+SELECT * FROM clientes WHERE nome LIKE '_____'
+
+-- Nomes onde a segunda letra é "a"
+SELECT * FROM clientes WHERE nome LIKE '_a%'
+
+-- Encontra "ana", "Ana", "ANA", "AnA" etc.
+SELECT * FROM clientes WHERE nome ILIKE 'ana%'
+
+-- Todos que NÃO começam com "Test"
+SELECT * FROM clientes WHERE nome NOT LIKE 'Test%'
+```
+
+## Funções com TEXTO
+```SQL
+-- CONCATENAÇÃO
+SELECT CONCAT(nome, ' ', sobrenome) AS nome_completo FROM clientes
+-- ou
+SELECT nome || ' ' || sobrenome AS nome_completo FROM clientes
+
+-- TAMANHO DA STRING
+SELECT nome, LENGTH(nome) AS qtd_caracteres FROM clientes
+
+-- MAIÚSCULAS & MINÚSCULAS
+SELECT UPPER(nome), LOWER(nome) FROM clientes
+
+-- REMOVE ESPAÇOS EM BRANCO
+SELECT TRIM(nome) FROM clientes
+SELECT TRIM(LEADING ' ' FROM nome) FROM clientes
+SELECT TRIM(TRAILING ' ' FROM nome) FROM clientes
+
+-- SLICE
+SELECT SUBSTR(nome, 1, 3) FROM clientes
+
+-- SUBSTITUIR PEDAÇOS
+SELECT REPLACE(email, '@gmail.com', '@empresa.com') FROM clientes
+
+-- REGEX (ALGUMAS ENGINE SQL SUPORTAM)
+SELECT * FROM clientes WHERE REGEXP_LIKE(nome, '^Ana');
+SELECT REGEXP_EXTRACT(email, '@(.+)$', 1) AS dominio FROM clientes;
+SELECT REGEXP_REPLACE(telefone, '[^0-9]', '') AS telefone_limpo FROM clientes;
+```
+
 ## Ordem de Precedencia de uma Query
 1. FROM
 2. JOIN
