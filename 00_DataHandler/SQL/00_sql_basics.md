@@ -121,7 +121,7 @@ WHERE EXISTS (
     SELECT 1 FROM orders AS o
     WHERE c.id_customer = o.id_customer
 )
--- ISso é equivalente:
+-- Isso é equivalente:
 SELECT
     *
 FROM customers
