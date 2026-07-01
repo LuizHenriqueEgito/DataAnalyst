@@ -1,81 +1,98 @@
 ## Datas:
-- DATE_PARSE:
+- ###### DATE_DIFF:
+```sql
+-- Calcula a diferença entre duas datas em uma unidade especifica
+SELECT DATE_DIFF('day', DATE'2024-01-01', DATE'2024-03-15')
+-- Unidades aceitas: 'millisecond', 'second', 'minute', 'hour', 'day', 'week', 'month', 'quarter', 'year'.
+```
+- ###### DATE_ADD:
+```sql
+-- Soma ou Subtrai um intervalo a uma data
+SELECT DATE_ADD('day', 7, DATE'2024-01-01')  -- 2024-01-08
+SELECT DATE_ADD('day', -1, DATE'2024-01-08')  -- 2024-01-08
+```
+- ###### DATA_TRUNC:
+```sql
+-- Trunca a data para o inicio do período
+SELECT DATE_TRUNC('month', DATE'2024-03-15')  -- 2024-03-01
+SELECT DATE_TRUNC('year', DATE'2024-03-15')  -- 2024-01-01
+SELECT DATE_TRUNC('week', DATE'2024-03-15')  -- 2024-03-11 (segunda-feira)
+```
+- ###### DATE_PARSE:
 ```sql
 -- Transforma string em data
 SELECT DATE_PARSE('2024-01-15', '%Y-%m-%d')
 ```
-- DATE_FORMAT:
+- ###### DATE_FORMAT:
 ```sql
 -- Transforma data em string
 SELECT DATE_FORMAT(current_date, '%d/%m/%Y')
 ```
-- CURRENT_DATE:
+- ###### CURRENT_DATE:
 ```sql
 -- Pega o timestemp atual
 SELECT CURRENT_DATE
 ```
-- EXTRACT:
+- ###### EXTRACT:
 ```sql
 -- Extrai ano mes ou dia de uma data
 SELECT EXTRACT(YEAR FROM CURRENT_DATE) as ano
 ```
-- INTERVAL
+- ###### INTERVAL
 ```sql
 -- Soma valores em uma data
 SELECT CURRENT_DATE + INTERVAL '7' DAY
 ```
 
 ## Strings: 
-- SPLIT:
+- ###### SPLIT:
 ```sql
 -- Retornar um Array
 SELECT SPLIT('a,b,c', ',')
 ```
-- SPLIT_PART:
+- ###### SPLIT_PART:
 ```sql
 -- Retorna b é como transformar em lista e pegar o 2 indice
 SELECT SPLIT_PART('a,b,c', ',', 2)
 ```
-- CONCAT:
+- ###### CONCAT:
 ```sql
 -- Contatena duas strings
 SELECT CONCAT('Olá', ' ', 'Mundo')
 ```
-- SUBSTR:
+- ###### SUBSTR:
 ```sql
 -- Faz o slice em uma string: retorna "abc"
 SELECT SUBSTR('abcdef', 1, 3)
 ```
-- UPPER & LOWER:
+- ###### UPPER & LOWER:
 ```sql
 SELECT UPPER('nome'), LOWER('sobrenome')
 ```
 
-- TRIM:
+- ###### TRIM:
 ```sql
 -- Remove espaços
 SELECT TRIM('   oi   ')
 ```
-- REPLACE:
+- ###### REPLACE:
 ```sql
 -- Substitui, aaa vira ooo
 SELECT REPLACE('aaa', 'a', 'o')
 ```
 
 ## JSON:
-- JSON_EXTRACT:
+- ###### JSON_EXTRACT:
 ```sql
 -- Retorna JSON ("your_name")
 SELECT JSON_EXTRACT('{"nome":"your_name"}', '$.nome')
 ```
-
-- JSON_EXTRACT_SCALAR:
+- ###### JSON_EXTRACT_SCALAR:
 ```sql
 -- Retorna string your_name
 SELECT JSON_EXTRACT_SCALAR('{"nome":"your_name"}', '$.nome')
 ```
-
-- JSON_QUERY:
+- ###### JSON_QUERY:
 ```sql
 -- É como o extract
 SELECT JSON_QUERY('{"a":1}', '$.a')
@@ -92,7 +109,7 @@ ou como `json`:
 cliente_id | atributos
 -----------|-------------------------
 1          | {"idade": 30, "renda": 1500}
-- CARDINALITY:
+- ###### CARDINALITY:
 ```sql
 -- Nos fala quantos itens o array tem
 SELECT 
@@ -100,8 +117,7 @@ SELECT
   CARDINALITY(compras) as qtd_compras
 FROM tabela
 ```
-
-- UNNEST:
+- ###### UNNEST:
 ```sql
 -- Transforma a linha com array em coluna
 SELECT cliente_id, valor
@@ -122,22 +138,19 @@ Depois:
 
 */
 ```
-
-- ELEMENT_AT:
+- ###### ELEMENT_AT:
 ```sql
 -- Pega um item especifico
 SELECT ELEMENT_AT(compras, 1) as primeira_compra
 FROM tabela
 ```
-
-- MAP_KEYS:
+- ###### MAP_KEYS:
 ```sql
 -- Pega as chaves de um dicionario
 SELECT MAP_KEYS(atributos)
 FROM tabela
 ```
-
-- MAP_VALUES:
+- ###### MAP_VALUES:
 ```sql
 -- Pega os valores de um json
 SELECT MAP_VALUES(atributos)
@@ -145,7 +158,7 @@ FROM tabela
 ```
 
 ## Funções de janela:
-- LAG:
+- ###### LAG:
 ```sql
 -- Olha para trás
 SELECT 
@@ -161,7 +174,7 @@ FROM vendas
 | 2024-01-03 | 120   | 150            |
 */
 ```
-- LEAD:
+- ###### LEAD:
 ```sql
 -- Olha para frente
 SELECT 
