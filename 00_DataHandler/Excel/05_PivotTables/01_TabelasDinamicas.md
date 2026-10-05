@@ -20,3 +20,9 @@ O quanto representa da coluna
 ## Percentual da Linha
 O quanto representa da linha
 ![alt text](../images/image_tabelas_dinamicas_3.png)
+
+## Deixando `0` Vazios na tabela (& na Tabela Dinâmica)
+1. Selecione os dados com os valores;
+2. `Ctrl` + `1`;
+3. Vá na **Categoria**: *Personalizado*;
+4. Coloque: `0;;`
