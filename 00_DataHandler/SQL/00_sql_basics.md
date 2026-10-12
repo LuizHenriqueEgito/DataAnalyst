@@ -62,6 +62,15 @@ SELECT * FROM customers
 WHERE age IS NOT NULL
 ```
 
+## FLOOR & MOD
+```sql
+SELECT
+    -- FLOOR(x): arredonda x para baixo, para o maior inteiro menor ou igual a ele.
+    FLOOR(20260213 / 100) AS ANOMES  -- Retorna 202602
+    -- MOD(x, y): retorna o resto da divisão de x por y.
+    ,MOD(20260213, 100) AS DIA  -- Retora 13
+```
+
 ## Linhas Duplicadas
 ```SQL
 SELECT

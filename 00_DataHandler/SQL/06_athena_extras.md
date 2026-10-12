@@ -33,6 +33,21 @@ FROM (
 ) t
 WHERE rn = 1
 ```
+- Tenho uma tabela com YYYYMMDD como pegar a partição máxima dado o dia do mês de cada YYYYMM
+```sql
+SELECT *
+FROM (
+    SELECT
+        tb.*,
+        ROW_NUMBER() OVER (
+            PARTITION BY CAST(anomesdia / 100 AS INTEGER)
+            ORDER BY anomesdia DESC
+        ) AS rn
+    FROM tb_main tb
+    WHERE MOD(anomesdia, 100) <= 15  -- DIA QUE VOCÊ DESEJA
+) t
+WHERE rn = 1;
+```
 
 - Como passar uma lista de YYYYMM e fazer com que a tabela encontre a partição máxima YYYYMMDD
 
